@@ -9,6 +9,13 @@
  * You should have received a copy of the GNU General Public License along with finkysaurus.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+let fs = require('fs');
+let markdown = fs.readFileSync("D:/PiczelSpydr/Projects/finkysaurus/src/example.md", "utf8");
+
+markdown = markdown.replace(/(#+)(.*)/g, '<h1>$2</h1>');
+markdown = markdown.replace(/(\*|_)(.*?)\1/g, '<em>$2</em>');
+markdown = markdown.replace(/(\*|_)(.*?)\1/g, '<em>$2</em>');
+
 //const parseString = require('xml2js').parseString;
 const convert = require('xml-js');
 
